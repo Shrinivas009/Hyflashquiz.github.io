@@ -1,0 +1,167 @@
+:root {
+  --main-color: #00bcd4;
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --card-color: #f0f0f0;
+}
+
+body.dark {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --card-color: #1e1e1e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s;
+  background-size: cover;
+  background-position: center;
+}
+
+header {
+  background-color: var(--main-color);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+#themeToggle {
+  position: absolute;
+  right: 1rem;
+  top: 1.2rem;
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--main-color);
+  padding: 0.5rem;
+}
+
+nav button {
+  background: white;
+  color: var(--main-color);
+  border: none;
+  padding: 0.6rem 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+main {
+  padding: 1rem;
+}
+
+section {
+  display: none;
+}
+
+section.active {
+  display: block;
+}
+
+input, select {
+  display: block;
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 0.6rem 1rem;
+  margin-top: 0.5rem;
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+#flashcard_list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.flashcard {
+  background-color: var(--card-color);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.flashcard.correct {
+  background-color: #4caf50;
+  color: white;
+}
+
+.flashcard.wrong {
+  background-color: #f44336;
+  color: white;
+}
+
+#quiz_area, #quizBuilder {
+  margin-top: 1rem;
+}
+
+.quiz-question {
+  background-color: var(--card-color);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  font-size: 1.1rem;
+}
+
+.option-btn {
+  display: block;
+  background-color: white;
+  color: var(--main-color);
+  border: 2px solid var(--main-color);
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.option-btn:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+.match-pair {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  background-color: var(--card-color);
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.match-pair span {
+  width: 45%;
+  padding: 0.4rem;
+  border: 1px dashed #aaa;
+  text-align: center;
+}
+
+input[type="color"] {
+  height: 40px;
+}

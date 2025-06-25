@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HyFlashQuiz</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon.png" type="image/png">
+</head>
+<body>
+  <header>
+    <h1>HyFlashQuiz</h1>
+    <button id="themeToggle" onclick="toggleTheme()">🌗</button>
+  </header>
+
+  <nav>
+    <button onclick="showSection('flashcards')">🧠 Flashcards</button>
+    <button onclick="showSection('quiz')">🧪 Quiz</button>
+    <button onclick="showSection('customize')">🎨 Themes</button>
+  </nav>
+
+  <main>
+    <!-- Flashcards Section -->
+    <section id="flashcards" class="active">
+      <h2>Create Flashcards</h2>
+      <input type="text" id="fc_question" placeholder="Enter question" />
+      <input type="text" id="fc_answer" placeholder="Enter answer (True or False)" />
+      <button onclick="addFlashcard()">➕ Add Flashcard</button>
+      <div id="flashcard_list"></div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="quiz">
+      <h2>Create Quiz</h2>
+      <select id="quizType">
+        <option value="mcq">MCQ</option>
+        <option value="truefalse">True / False</option>
+        <option value="fillblank">Fill in the Blank</option>
+        <option value="match">Match the Following</option>
+        <option value="short">Short Answer</option>
+      </select>
+      <div id="quizBuilder"></div>
+      <button onclick="startQuiz()">▶️ Start Quiz</button>
+      <div id="quiz_area"></div>
+    </section>
+
+    <!-- Theme Section -->
+    <section id="customize">
+      <h2>Customize Theme</h2>
+      <label>Choose Theme Color:</label>
+      <input type="color" id="themeColor" onchange="changeThemeColor()" />
+      <label>Background Image URL:</label>
+      <input type="text" id="bgImage" onchange="changeBackground()" placeholder="Enter image URL" />
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
